@@ -24,8 +24,6 @@ export const ADD_USER = gql`
   }
 `;
 
-
-//TODO add the pageCount and publishedDate to the savedBooks query
 export const SAVE_BOOK = gql`
   mutation saveBook($bookData: BookInput!) {
     saveBook(bookData: $bookData) {
@@ -39,12 +37,13 @@ export const SAVE_BOOK = gql`
         description
         title
         link
+        pageCount
+        publishedDate
       }
     }
   }
 `;
 
-//TODO add the pageCount and publishedDate to the savedBooks query
 export const REMOVE_BOOK = gql`
   mutation removeBook($bookId: ID!) {
     removeBook(bookId: $bookId) {
@@ -58,6 +57,8 @@ export const REMOVE_BOOK = gql`
         description
         title
         link  
+        pageCount
+        publishedDate
       }
     }
   }
